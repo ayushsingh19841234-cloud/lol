@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ajeet Construction - Mr Ajeet Singh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #b45309; /* Premium Amber/Bronze Tone */
+            --accent-hover: #92400e;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text: #334155;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+            --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(180, 83, 9, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .subtitle {
+            font-family: 'Inter', sans-serif;
+            margin: 0 0 16px 0;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #94a3b8;
+            padding: 20px 24px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Hero Layout */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .hero h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            max-width: 700px;
+            line-height: 1.3;
+            margin: 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Core Sections Layout */
+        section {
+            padding: 90px 24px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 16px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 32px;
+            border: 1px solid rgba(15, 23, 42, 0.03);
+        }
+
+        /* Badges styling */
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .badge {
+            background: #f1f5f9;
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Estimators */
+        .calculator-box {
+            background: #f8fafc;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            margin-top: 24px;
+        }
+
+        .form-group { 
+            margin-bottom: 24px; 
+        }
+
+        label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 12px; 
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+            margin-bottom: 8px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        input[type="number"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(180, 83, 9, 0.12);
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-choice {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-choice:hover {
+            border-color: var(--text-muted);
+        }
+
+        .btn-choice.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .result-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            margin-top: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .result-cost {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -1px;
+            margin: 6px 0;
+        }
+
+        .result-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Services Layout */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            padding: 40px 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(180, 83, 9, 0.2);
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .product-card .price-tag {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin: 20px 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* Complete Material Rates Layout */
+        .rates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media(min-width: 992px) {
+            .rates-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .rate-category-box {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .rate-category-box:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .rate-category-header {
+            background: var(--primary);
+            padding: 20px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .is-code {
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Generic Tables styling */
+        .material-table-container {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: var(--shadow-md);
+            padding: 32px;
+            margin-top: 48px;
+        }
+
+        .material-table-container h3 {
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 1.35rem;
+            color: var(--text-dark);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #fafafa;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .price-avg { font-weight: 700; color: var(--text-dark); }
+        .price-range { color: var(--text-muted); font-size: 0.85rem; }
+        .highlight-row { background-color: #f8fafc; font-weight: 600; }
+        .highlight-row td { color: var(--text-dark); }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* General Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(180, 83, 9, 0.2);
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(180, 83, 9, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
+        }
+        .btn-secondary:hover {
+            background: #020617;
+            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+        }
+
+        .material-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .material-item:last-child {
+            border-bottom: none;
+        }
+
+        /* FAQs */
+        .faq-item { margin-bottom: 32px; }
+        .faq-item:last-child { margin-bottom: 0; }
+        .faq-question { font-weight: 700; font-size: 1.15rem; margin-bottom: 8px; color: var(--text-dark); }
+        .faq-answer { color: var(--text); font-size: 1rem; }
+
+        /* Lists */
+        ul { padding-left: 24px; margin: 0; }
+        li { margin-bottom: 12px; font-size: 1.05rem; }
+
+        /* Media Containers */
+        .media-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        /* Buyer Note Styling */
+        .buyer-takeaway-note {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 24px 32px;
+            margin: 48px auto;
+            max-width: 1200px;
+        }
+        .note-header {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .note-disclaimer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #64748b;
+            text-align: center;
+            padding: 48px 24px;
+            margin-top: 100px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        @media(max-width: 768px) {
+            header h1 { font-size: 2.25rem; }
+            nav a { padding: 14px 12px; font-size: 0.85rem; }
+            section { padding: 60px 16px; }
+            .card { padding: 24px; }
+            table, th, td { font-size: 0.85rem; padding: 12px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Ajeet Construction</h1>
+    <div class="subtitle">By Mr Ajeet Singh</div>
+    <p>Professional Contractor, Builder & Infrastructure Consultant</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <a href="#about">About</a>
+        <a href="#estimator">Cost Estimators</a>
+        <a href="#rates">Material Rates</a>
+        <a href="#comparisons">City Comparisons</a>
+        <a href="#services">Services</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h2>Building Your Dreams Into Reality</h2>
+</div>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+        <p>Hello, my name is <strong>Mr Ajeet Singh</strong>, a professional contractor based in Lucknow with extensive experience executing modern architecture, construction, and structural development works.</p>
+        <p>I specialize in delivering robust, high-strength structures. My approach merges top-tier engineering standards with careful material selection to prioritize durability and complete customer satisfaction.</p>
+        <p>Every single blueprint I take on is managed with complete dedication, structural clarity, and transparent asset monitoring. Whether it’s modern home builds, complete renovations, or layout planning, I ensure the ultimate standard.</p>
+        <blockquote style="border-left: 4px solid var(--accent); margin: 30px 0; padding-left: 20px; font-style: italic; color: var(--text-dark); font-size: 1.15rem; font-weight: 500;">
+            “Quality is never an accident; it is always the result of intelligent effort.”
+        </blockquote>
+    </div>
+</section>
+
+<section id="estimator">
+    <h2 class="section-title">Smart Construction Budget Analytics</h2>
+    
+    <div class="card">
+        <h3 style="margin-top:0; font-size:1.4rem;">1. Interactive Quick Budget Slider</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top:-10px; margin-bottom: 24px;">Based on updated regional indexes tracking Lucknow-wide variables.</p>
+        
+        <div class="badges">
+            <div class="badge">💰 Standard: ₹1,802–2,335/sqft</div>
+            <div class="badge">🏠 2BHK starts at ₹14 L</div>
+            <div class="badge">📦 200+ structural variables tracked</div>
+        </div>
+
+        <div class="calculator-box">
+            <div class="form-group">
+                <label>Plot Built-Up Area: <span id="area-val" style="color: var(--accent); font-size:1.15rem; font-weight: 700;">1,000</span> sqft</label>
+                <input type="range" id="area-slider" min="500" max="5000" step="50" value="1000">
+                <div class="range-labels">
+                    <span>500 sqft</span>
+                    <span>5,000 sqft</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Configuration Layout</label>
+                <div class="btn-group" id="config-group">
+                    <button class="btn-choice" data-val="1BHK">1BHK</button>
+                    <button class="btn-choice active" data-val="2BHK">2BHK</button>
+                    <button class="btn-choice" data-val="3BHK">3BHK</button>
+                    <button class="btn-choice" data-val="4BHK">4BHK</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Material & Build Finish Quality</label>
+                <div class="btn-group" id="quality-group">
+                    <button class="btn-choice" data-val="1597">Basic</button>
+                    <button class="btn-choice active" data-val="2048">Standard</button>
+                    <button class="btn-choice" data-val="2765">Premium</button>
+                    <button class="btn-choice" data-val="3789">Luxury</button>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <div style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Projected Outlay Framework (Lucknow Hub)</div>
+                <div class="result-cost" id="calculated-total">₹18–23 L</div>
+                <div class="result-desc" id="calculated-desc">₹2,048/sqft · Standard · 2BHK</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 style="margin-top:0; font-size:1.4rem;">2. Basic Structural Material Estimator</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top:-10px; margin-bottom: 24px;">Input explicit dimensions below to compute expected load metrics for basic essential materials.</p>
+        
+        <div class="form-group">
+            <label for="custom-area-input">Built-up Area (in Square Feet):</label>
+            <input type="number" id="custom-area-input" placeholder="e.g., 1250" min="1">
+        </div>
+        
+        <button class="btn" onclick="calculateRawMaterials()">Generate Volume Checklist</button>
+
+        <div class="results" id="raw-results-box" style="display: none; margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px;">
+            <h4 style="color: var(--text-dark); margin-bottom: 16px; font-size: 1.1rem;">Projected Component Weights Required:</h4>
+            <div class="material-item">
+                <span><strong>Cement Logistics:</strong></span>
+                <span id="cement-val" style="font-weight:700; color:var(--text-dark);">0 bags</span>
+            </div>
+            <div class="material-item">
+                <span><strong>Fine Aggregate (Sand Volume):</strong></span>
+                <span id="sand-val" style="font-weight:700; color:var(--text-dark);">0 cft</span>
+            </div>
+            <div class="material-item">
+                <span><strong>Red Clay/Fly Ash Bricks:</strong></span>
+                <span id="bricks-val" style="font-weight:700; color:var(--text-dark);">0 units</span>
+            </div>
+            <div class="material-item">
+                <span><strong>Reinforcement Structural Steel:</strong></span>
+                <span id="steel-val" style="font-weight:700; color:var(--text-dark);">0 kg</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rates">
+    <h2 class="section-title">Lucknow Material Price Index</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-top:-32px; margin-bottom:56px; max-width: 600px; margin-left: auto; margin-right: auto;">Comprehensive brand-wise rates, bulk dealer limits, and official Indian Standard (IS) certifications.</p>
+    
+    <div class="rates-grid">
+        
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>🏗️ Cement Profiles</span>
+                <span class="is-code">IS 269</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Material / Brand Line</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>OPC 43 Grade Cement</td><td class="price-avg">₹412</td><td class="price-range">₹391–433</td><td>per 50kg bag</td></tr>
+                        <tr><td>OPC 53 Grade Cement</td><td class="price-avg">₹434</td><td class="price-range">₹412–470</td><td>per 50kg bag</td></tr>
+                        <tr><td>PPC Cement (Fly Ash)</td><td class="price-avg">₹398</td><td class="price-range">₹369–412</td><td>per 50kg bag</td></tr>
+                        <tr><td>PSC Cement (Slag)</td><td class="price-avg">₹402</td><td class="price-range">₹380–423</td><td>per 50kg bag</td></tr>
+                        <tr><td>White Cement</td><td class="price-avg">₹1087</td><td class="price-range">₹900–1200</td><td>per 50kg</td></tr>
+                        <tr><td>UltraTech OPC 53 Grade</td><td class="price-avg">₹451</td><td class="price-range">₹428–473</td><td>per 50kg bag</td></tr>
+                        <tr><td>UltraTech PPC</td><td class="price-avg">₹403</td><td class="price-range">₹380–425</td><td>per 50kg bag</td></tr>
+                        <tr><td>UltraTech Super</td><td class="price-avg">₹464</td><td class="price-range">₹441–487</td><td>per 50kg bag</td></tr>
+                        <tr><td>Shree Rockstrong PPC</td><td class="price-avg">₹387</td><td class="price-range">₹366–408</td><td>per 50kg bag</td></tr>
+                        <tr><td>Shree Bangur OPC 53</td><td class="price-avg">₹420</td><td class="price-range">₹399–441</td><td>per 50kg bag</td></tr>
+                        <tr><td>Ambuja Plus OPC 53</td><td class="price-avg">₹451</td><td class="price-range">₹428–473</td><td>per 50kg bag</td></tr>
+                        <tr><td>Ambuja Compocem</td><td class="price-avg">₹410</td><td class="price-range">₹377–470</td><td>per 50kg bag</td></tr>
+                        <tr><td>ACC Gold</td><td class="price-avg">₹447</td><td class="price-range">₹425–469</td><td>per 50kg bag</td></tr>
+                        <tr><td>ACC F2R</td><td class="price-avg">₹399</td><td class="price-range">₹377–469</td><td>per 50kg bag</td></tr>
+                        <tr><td>JSW Portland</td><td class="price-avg">₹443</td><td class="price-range">₹421–464</td><td>per 50kg bag</td></tr>
+                        <tr><td>Ramco Supergrade</td><td class="price-avg">₹443</td><td class="price-range">₹421–464</td><td>per 50kg bag</td></tr>
+                        <tr><td>Dalmia DSP</td><td class="price-avg">₹429</td><td class="price-range">₹408–450</td><td>per 50kg bag</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>🔩 Structural Steel & Rebars</span>
+                <span class="is-code">IS 1786</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Material / Brand Line</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>TMT Bar 8mm (Fe500D)</td><td class="price-avg">₹63</td><td class="price-range">₹60–66</td><td>per kg</td></tr>
+                        <tr><td>TMT Bar 10mm (Fe500D)</td><td class="price-avg">₹62</td><td class="price-range">₹59–65</td><td>per kg</td></tr>
+                        <tr><td>TMT Bar 12mm (Fe500D)</td><td class="price-avg">₹65</td><td class="price-range">₹58–69</td><td>per kg</td></tr>
+                        <tr><td>TMT Bar 16mm (Fe500D)</td><td class="price-avg">₹64</td><td class="price-range">₹57–70</td><td>per kg</td></tr>
+                        <tr><td>TMT Bar 20mm (Fe500D)</td><td class="price-avg">₹62</td><td class="price-range">₹57–66</td><td>per kg</td></tr>
+                        <tr><td>TMT Bar 25mm (Fe500D)</td><td class="price-avg">₹62</td><td class="price-range">₹57–68</td><td>per kg</td></tr>
+                        <tr><td>Structural Steel (ISMB/ISMC)</td><td class="price-avg">₹70</td><td class="price-range">₹66–73</td><td>per kg</td></tr>
+                        <tr><td>MS Plate (6-12mm)</td><td class="price-avg">₹67</td><td class="price-range">₹63–70</td><td>per kg</td></tr>
+                        <tr><td>Binding Wire (18 gauge)</td><td class="price-avg">₹60</td><td class="price-range">₹56–63</td><td>per kg</td></tr>
+                        <tr><td>Tata Tiscon Fe 500D 8mm</td><td class="price-avg">₹309</td><td class="price-range">₹305–315</td><td>per piece</td></tr>
+                        <tr><td>Tata Tiscon Fe 500D 10mm</td><td class="price-avg">₹551</td><td class="price-range">₹546–559</td><td>per piece</td></tr>
+                        <tr><td>Tata Tiscon Fe 500D 12mm</td><td class="price-avg">₹790</td><td class="price-range">₹778–792</td><td>per piece</td></tr>
+                        <tr><td>Tata Tiscon Fe 500D 16mm</td><td class="price-avg">₹1,390</td><td class="price-range">₹1,389–1,400</td><td>per piece</td></tr>
+                        <tr><td>JSW Neosteel 500D 10mm</td><td class="price-avg">₹520</td><td class="price-range">₹490–560</td><td>per piece</td></tr>
+                        <tr><td>JSW Neosteel 500D 12mm</td><td class="price-avg">₹760</td><td class="price-range">₹700–840</td><td>per piece</td></tr>
+                        <tr><td>JSW Neosteel 500D 16mm</td><td class="price-avg">₹1,280</td><td class="price-range">₹1,230–1,360</td><td>per piece</td></tr>
+                        <tr><td>SAIL SeQR 10mm</td><td class="price-avg">₹63</td><td class="price-range">₹60–66</td><td>per kg</td></tr>
+                        <tr><td>SAIL SeQR 12mm</td><td class="price-avg">₹62</td><td class="price-range">₹59–65</td><td>per kg</td></tr>
+                        <tr><td>Vizag Steel 12mm</td><td class="price-avg">₹62</td><td class="price-range">₹59–65</td><td>per kg</td></tr>
+                        <tr><td>Kamdhenu Nxt 10mm</td><td class="price-avg">₹62</td><td class="price-range">₹59–65</td><td>per kg</td></tr>
+                        <tr><td>Kamdhenu Nxt 12mm</td><td class="price-avg">₹61</td><td class="price-range">₹58–64</td><td>per kg</td></tr>
+                        <tr><td>Jindal Panther 10mm</td><td class="price-avg">₹65</td><td class="price-range">₹62–68</td><td>per kg</td></tr>
+                        <tr><td>Jindal Panther 16mm</td><td class="price-avg">₹63</td><td class="price-range">₹60–66</td><td>per kg</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>⛰️ Sand & Raw Aggregates</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Material Variant</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>River Sand</td><td class="price-avg">₹2,006</td><td class="price-range">₹1,652–2,360</td><td>per tonne</td></tr>
+                        <tr><td>M-Sand (Manufactured)</td><td class="price-avg">₹1,800</td><td class="price-range">₹1,500–1,900</td><td>per tonne</td></tr>
+                        <tr><td>Plastering Sand (P-Sand)</td><td class="price-avg">₹1,852</td><td class="price-range">₹1,800–2,000</td><td>per tonne</td></tr>
+                        <tr><td>Coarse Aggregate 20mm</td><td class="price-avg">₹1,298</td><td class="price-range">₹1,062–1,534</td><td>per tonne</td></tr>
+                        <tr><td>Coarse Aggregate 40mm</td><td class="price-avg">₹1,180</td><td class="price-range">₹944–1,416</td><td>per tonne</td></tr>
+                        <tr><td>Stone Dust / Crusher Dust</td><td class="price-avg">₹1,020</td><td class="price-range">₹990–1,200</td><td>per tonne</td></tr>
+                        <tr><td>Coarse Aggregate 10mm</td><td class="price-avg">₹2,100</td><td class="price-range">₹1,900–3,000</td><td>per tonne</td></tr>
+                        <tr><td>Boulder Soling (40mm+)</td><td class="price-avg">₹1,039</td><td class="price-range">₹831–1,246</td><td>per tonne</td></tr>
+                        <tr><td>Graded Sub-Base (GSB)</td><td class="price-avg">₹1,003</td><td class="price-range">₹802–1,204</td><td>per tonne</td></tr>
+                        <tr><td>Stone Chips 6mm</td><td class="price-avg">₹1,363</td><td class="price-range">₹1,115–1,611</td><td>per tonne</td></tr>
+                        <tr><td>Kadappa Aggregate</td><td class="price-avg">₹1,558</td><td class="price-range">₹1,274–1,841</td><td>per tonne</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🧱 Ready-Mix Concrete (RMC)</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Mix Design Grade</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ready-Mix M20</td><td class="price-avg">₹4,950</td><td class="price-range">₹4,620–5,280</td><td>per m³</td></tr>
+                        <tr><td>Ready-Mix M25</td><td class="price-avg">₹5,390</td><td class="price-range">₹5,060–5,720</td><td>per m³</td></tr>
+                        <tr><td>Ready-Mix M30</td><td class="price-avg">₹8,830</td><td class="price-range">₹5,500–6,160</td><td>per m³</td></tr>
+                        <tr><td>Ready-Mix M35</td><td class="price-avg">₹6,380</td><td class="price-range">₹5,940–6,820</td><td>per m³</td></tr>
+                        <tr><td>Ready-Mix M40</td><td class="price-avg">₹6,763</td><td class="price-range">₹6,296–7,229</td><td>per m³</td></tr>
+                        <tr><td>Lean Concrete M10 (PCC)</td><td class="price-avg">₹3,465</td><td class="price-range">₹3,234–3,696</td><td>per m³</td></tr>
+                        <tr><td>Plasticizer Admixture</td><td class="price-avg">₹87</td><td class="price-range">₹61–113</td><td>per kg</td></tr>
+                        <tr><td>Superplasticizer Admixture</td><td class="price-avg">₹157</td><td class="price-range">₹109–204</td><td>per kg</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🧱 Masonry Bricks & Light Blocks</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Form Configuration</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Red Clay Brick (9×4×3")</td><td class="price-avg">₹9.5</td><td class="price-range">₹8–10</td><td>per piece</td></tr>
+                        <tr><td>Fly Ash Brick</td><td class="price-avg">₹7</td><td class="price-range">₹6–8</td><td>per piece</td></tr>
+                        <tr><td>AAC Block (600×200×200)</td><td class="price-avg">₹90</td><td class="price-range">₹80–120</td><td>per piece</td></tr>
+                        <tr><td>Solid Concrete Block (400×200×200)</td><td class="price-avg">₹65</td><td class="price-range">₹35–75</td><td>per piece</td></tr>
+                        <tr><td>Hollow Concrete Block (400×200×200)</td><td class="price-avg">₹44</td><td class="price-range">₹32–80</td><td>per piece</td></tr>
+                        <tr><td>Siporex AAC Block 4 inch</td><td class="price-avg">₹56</td><td class="price-range">₹45–60</td><td>per piece</td></tr>
+                        <tr><td>Siporex AAC Block 6 inch</td><td class="price-avg">₹70</td><td class="price-range">₹65–85</td><td>per piece</td></tr>
+                        <tr><td>Biltech AAC Block 6 inch</td><td class="price-avg">₹65</td><td class="price-range">₹50–80</td><td>per piece</td></tr>
+                        <tr><td>Magicrete AAC Block 6 inch</td><td class="price-avg">₹71</td><td class="price-range">₹60–75</td><td>per piece</td></tr>
+                        <tr><td>CLC Block 6 inch</td><td class="price-avg">₹65</td><td class="price-range">₹52–75</td><td>per piece</td></tr>
+                        <tr><td>Paver Block 60mm</td><td class="price-avg">₹35</td><td class="price-range">₹15–50</td><td>per piece</td></tr>
+                        <tr><td>Paver Block 80mm</td><td class="price-avg">₹45</td><td class="price-range">₹20–60</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🔲 Architectural Flooring & Stones</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Surface Selection</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Vitrified Tiles (2×2 ft)</td><td class="price-avg">₹87</td><td class="price-range">₹62–112</td><td>per sqft</td></tr>
+                        <tr><td>Ceramic Wall Tiles</td><td class="price-avg">₹52</td><td class="price-range">₹40–120</td><td>per sqft</td></tr>
+                        <tr><td>Granite Slab (Polished)</td><td class="price-avg">₹118</td><td class="price-range">₹85–300+</td><td>per sqft</td></tr>
+                        <tr><td>Marble Slab (Indian)</td><td class="price-avg">₹50+</td><td class="price-range">₹50–5500++</td><td>per sqft</td></tr>
+                        <tr><td>Kota Stone</td><td class="price-avg">₹50+</td><td class="price-range">₹45–70</td><td>per sqft</td></tr>
+                        <tr><td>Kajaria Vitrified Tile</td><td class="price-avg">₹90+</td><td class="price-range">₹80–170+</td><td>per sqft</td></tr>
+                        <tr><td>Kajaria Ceramic Wall Tile</td><td class="price-avg">₹90</td><td class="price-range">₹80–120</td><td>per sqft</td></tr>
+                        <tr><td>Somany Vitrified Tile</td><td class="price-avg">₹80+</td><td class="price-range">₹80–300+</td><td>per sqft</td></tr>
+                        <tr><td>Johnson Ceramic Wall Tile</td><td class="price-avg">₹50+</td><td class="price-range">₹35–90</td><td>per sqft</td></tr>
+                        <tr><td>Asian Granito Vitrified</td><td class="price-avg">₹54+</td><td class="price-range">₹42–120+</td><td>per sqft</td></tr>
+                        <tr><td>Italian Marble (Statuario)</td><td class="price-avg">₹800+</td><td class="price-range">₹800–3000+</td><td>per sqft</td></tr>
+                        <tr><td>Makrana Marble (White)</td><td class="price-avg">₹50+</td><td class="price-range">₹50–1000+</td><td>per sqft</td></tr>
+                        <tr><td>Wooden Laminate Flooring</td><td class="price-avg">₹70+</td><td class="price-range">₹70-300+</td><td>per sqft</td></tr>
+                        <tr><td>SPC Vinyl Flooring</td><td class="price-avg">₹78</td><td class="price-range">₹47–150</td><td>per sqft</td></tr>
+                        <tr><td>Cuddapah Black Stone</td><td class="price-avg">₹50</td><td class="price-range">₹34-70</td><td>per sqft</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>🎨 Paints & Chemical Coatings</span>
+                <span class="is-code">IS 15489</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Product Formula</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Interior Emulsion Paint</td><td class="price-avg">₹170+</td><td class="price-range">₹170–900+</td><td>per litre</td></tr>
+                        <tr><td>Exterior Emulsion Paint</td><td class="price-avg">₹200+</td><td class="price-range">₹212–400+</td><td>per litre</td></tr>
+                        <tr><td>Wall Primer</td><td class="price-avg">₹300+</td><td class="price-range">₹300–500</td><td>per litre</td></tr>
+                        <tr><td>Wall Putty (White Cement)</td><td class="price-avg">₹600+</td><td class="price-range">₹600–740</td><td>per 40kg</td></tr>
+                        <tr><td>Enamel Paint (Metal/Wood)</td><td class="price-avg">₹361</td><td class="price-range">₹276–445+</td><td>per litre</td></tr>
+                        <tr><td>Asian Royale Luxury</td><td class="price-avg">₹810+</td><td class="price-range">₹810–850</td><td>per litre</td></tr>
+                        <tr><td>Asian Apex Ultima</td><td class="price-avg">₹600+</td><td class="price-range">₹600–680</td><td>per litre</td></tr>
+                        <tr><td>Asian Tractor Emulsion</td><td class="price-avg">₹320</td><td class="price-range">₹300–380</td><td>per litre</td></tr>
+                        <tr><td>Asian Tractor Distemper</td><td class="price-avg">₹99+</td><td class="price-range">₹90–190</td><td>per litre</td></tr>
+                        <tr><td>Asian Apcolite Enamel</td><td class="price-avg">₹361</td><td class="price-range">₹290–445</td><td>per litre</td></tr>
+                        <tr><td>Berger Silk</td><td class="price-avg">₹711</td><td class="price-range">₹600–750</td><td>per litre</td></tr>
+                        <tr><td>Berger Weathercoat All Guard</td><td class="price-avg">₹2,000</td><td class="price-range">₹2,000–2,200+</td><td>per litre</td></tr>
+                        <tr><td>Berger Easy Clean</td><td class="price-avg">₹490</td><td class="price-range">₹440–500</td><td>per litre</td></tr>
+                        <tr><td>Berger Bison Distemper</td><td class="price-avg">₹160+</td><td class="price-range">₹150–160+</td><td>per litre</td></tr>
+                        <tr><td>Berger Luxol Hi-gloss</td><td class="price-avg">₹300+</td><td class="price-range">₹289–300</td><td>per litre</td></tr>
+                        <tr><td>Nerolac Excel Total</td><td class="price-avg">₹453</td><td class="price-range">₹318–588</td><td>per litre</td></tr>
+                        <tr><td>Nerolac Impressions</td><td class="price-avg">₹700+</td><td class="price-range">₹305–800</td><td>per litre</td></tr>
+                        <tr><td>Nerolac Beauty Smooth</td><td class="price-avg">₹229</td><td class="price-range">₹153–305</td><td>per litre</td></tr>
+                        <tr><td>Dulux Weathershield</td><td class="price-avg">₹766+</td><td class="price-range">₹350–790</td><td>per litre</td></tr>
+                        <tr><td>Dulux Velvet Touch</td><td class="price-avg">₹600+</td><td class="price-range">₹600–800</td><td>per litre</td></tr>
+                        <tr><td>Dulux Diamond Glo</td><td class="price-avg">₹600+</td><td class="price-range">₹500–1,000</td><td>per litre</td></tr>
+                        <tr><td>JK Wall Putty</td><td class="price-avg">₹20</td><td class="price-range">₹16–24</td><td>per kg</td></tr>
+                        <tr><td>Birla Wall Putty</td><td class="price-avg">₹21</td><td class="price-range">₹17–25</td><td>per kg</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>🪵 Structural Timber & Board Stocks</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Material Selection</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Commercial Plywood (19mm)</td><td class="price-avg">₹170+</td><td class="price-range">₹115–190</td><td>per sqft</td></tr>
+                        <tr><td>BWR Plywood (19mm)</td><td class="price-avg">₹170</td><td class="price-range">₹145–195</td><td>per sqft</td></tr>
+                        <tr><td>Marine Plywood (19mm)</td><td class="price-avg">₹103+</td><td class="price-range">₹82–124+</td><td>per sqft</td></tr>
+                        <tr><td>Sunmica / Laminate Sheet</td><td class="price-avg">₹1,000+</td><td class="price-range">₹1,300+</td><td>per sqft</td></tr>
+                        <tr><td>Teak Wood (Sagwan)</td><td class="price-avg">₹3,142+</td><td class="price-range">₹2,369–4,500</td><td>per cft</td></tr>
+                        <tr><td>Greenply Commercial Ply</td><td class="price-avg">₹49</td><td class="price-range">₹40–58</td><td>per sqft</td></tr>
+                        <tr><td>Century Prowud</td><td class="price-avg">₹90</td><td class="price-range">₹80–160</td><td>per sqft</td></tr>
+                        <tr><td>Kitply Marine Plywood</td><td class="price-avg">₹100+</td><td class="price-range">₹82–300+</td><td>per sqft</td></tr>
+                        <tr><td>Flush Door (Commercial)</td><td class="price-avg">₹150+</td><td class="price-range">₹144–350+</td><td>per sqft</td></tr>
+                        <tr><td>Greenlam Laminate Sheet</td><td class="price-avg">₹1500+</td><td class="price-range">₹1,400–2,500+</td><td>per sqft</td></tr>
+                        <tr><td>MDF Board 19mm</td><td class="price-avg">₹80+</td><td class="price-range">₹80–150+</td><td>per sqft</td></tr>
+                        <tr><td>Blockboard 19mm</td><td class="price-avg">₹80+</td><td class="price-range">₹80–154+</td><td>per sqft</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>🚿 Plumbing Profiles & Infrastructure</span>
+                <span class="is-code">IS 2065</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Component Specifications</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>CPVC Pipe (1/2" / 15mm)</td><td class="price-avg">₹160+</td><td class="price-range">₹160–400+</td><td>per piece</td></tr>
+                        <tr><td>PVC Pipe (4" / 110mm SWR)</td><td class="price-avg">₹400+</td><td class="price-range">₹400–2,000+</td><td>per metre</td></tr>
+                        <tr><td>GI Pipe (1" / 25mm)</td><td class="price-avg">₹400</td><td class="price-range">₹325–456</td><td>per metre</td></tr>
+                        <tr><td>Plastic Water Tank (1000L)</td><td class="price-avg">₹6,032</td><td class="price-range">₹4,992–15,000</td><td>per piece</td></tr>
+                        <tr><td>Astral CPVC Pipe 20mm (3/4")</td><td class="price-avg">₹210</td><td class="price-range">₹180–250</td><td>per metre</td></tr>
+                        <tr><td>Supreme CPVC Pipe 20mm</td><td class="price-avg">₹250</td><td class="price-range">₹220–280</td><td>per metre</td></tr>
+                        <tr><td>Finolex uPVC Pipe 25mm</td><td class="price-avg">₹409</td><td class="price-range">₹160–909</td><td>per standerd lenght</td></tr>
+                        <tr><td>Prince PPR Pipe 25mm</td><td class="price-avg">₹200+</td><td class="price-range">₹200–300</td><td>per piece</td></tr>
+                        <tr><td>GI Class-B Pipe 20mm</td><td class="price-avg">₹155</td><td class="price-range">₹120–190</td><td>per metre</td></tr>
+                        <tr><td>Kohler Wall-Hung WC</td><td class="price-avg">₹27,144+</td><td class="price-range">₹22,464–50,000+</td><td>per piece</td></tr>
+                        <tr><td>Hindware One-Piece WC</td><td class="price-avg">₹10,000+</td><td class="price-range">₹8,986–40,000+</td><td>per piece</td></tr>
+                        <tr><td>Parryware WC</td><td class="price-avg">₹7,238+</td><td class="price-range">₹5,990–25,000+</td><td>per piece</td></tr>
+                        <tr><td>Jaquar Basin Faucet Mid</td><td class="price-avg">₹4,826</td><td class="price-range">₹3,994–5,658</td><td>per piece</td></tr>
+                        <tr><td>Jaquar Basin Faucet Premium</td><td class="price-avg">₹10,858+</td><td class="price-range">₹8,986–22,000+</td><td>per piece</td></tr>
+                        <tr><td>Cera Wash Basin</td><td class="price-avg">₹6,032</td><td class="price-range">₹4,992–7,000+</td><td>per piece</td></tr>
+                        <tr><td>Sintex Water Tank 1000L</td><td class="price-avg">₹7,238+</td><td class="price-range">₹7,990–14,000+</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>⚡ Electrical System Internals</span>
+                <span class="is-code">IS 694</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Core Component Specifications</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Electrical Wire (1.0 sq mm)</td><td class="price-avg">₹500+</td><td class="price-range">₹500-2,500</td><td>per coil</td></tr>
+                        <tr><td>Electrical Wire (2.5 sq mm)</td><td class="price-avg">₹4,500+</td><td class="price-range">₹4,500–6,000</td><td>per coil</td></tr>
+                        <tr><td>MCB Single Pole (16A)</td><td class="price-avg">₹167</td><td class="price-range">₹130–450</td><td>per piece</td></tr>
+                        <tr><td>Modular Switch Plate (6M)</td><td class="price-avg">₹252</td><td class="price-range">₹168–336</td><td>per piece</td></tr>
+                        <tr><td>LED Bulb (9W)</td><td class="price-avg">₹86</td><td class="price-range">₹60–130</td><td>per piece</td></tr>
+                        <tr><td>Finolex Wire 1.5 sq mm</td><td class="price-avg">₹2,500+</td><td class="price-range">₹2,500–3,500</td><td>per 90m coil</td></tr>
+                        <tr><td>Havells Wire 2.5 sq mm</td><td class="price-avg">₹4,000+</td><td class="price-range">₹3,800–6,000</td><td>per 90m coil</td></tr>
+                        <tr><td>Polycab Wire 2.5 sqmm</td><td class="price-avg">₹4,500+</td><td class="price-range">₹4,500–5,000</td><td>per coil</td></tr>
+                        <tr><td>KEI Wire 2.5 sqmm</td><td class="price-avg">₹2,500+</td><td class="price-range">₹2,200–4,500</td><td>per metre</td></tr>
+                        <tr><td>Legrand Modular Switch</td><td class="price-avg">₹454</td><td class="price-range">₹302–605</td><td>per piece</td></tr>
+                        <tr><td>Anchor Modular Switch</td><td class="price-avg">₹177+</td><td class="price-range">₹118–800+</td><td>per piece</td></tr>
+                        <tr><td>Havells MCB 32A SP</td><td class="price-avg">₹250</td><td class="price-range">₹230–370</td><td>per piece</td></tr>
+                        <tr><td>L&T MCB 32A SP</td><td class="price-avg">₹217</td><td class="price-range">₹153–280</td><td>per piece</td></tr>
+                        <tr><td>Havells Ceiling Fan</td><td class="price-avg">₹5,544</td><td class="price-range">₹3,696–7,392</td><td>per piece</td></tr>
+                        <tr><td>Philips LED Bulb 9W</td><td class="price-avg">₹120</td><td class="price-range">₹77–162</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🪟 Interiors & Glass Glazing</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Material Type</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Plain Glass (5mm)</td><td class="price-avg">₹39+</td><td class="price-range">₹39–70</td><td>per sqft</td></tr>
+                        <tr><td>Toughened Glass (12mm)</td><td class="price-avg">₹170+</td><td class="price-range">₹170–700+</td><td>per sqft</td></tr>
+                        <tr><td>Gypsum Board (12.5mm)</td><td class="price-avg">₹31</td><td class="price-range">₹25–37</td><td>per sqft</td></tr>
+                        <tr><td>Plaster of Paris (POP)</td><td class="price-avg">₹53</td><td class="price-range">₹35–60</td><td>per kg</td></tr>
+                        <tr><td>Aluminium Section (Window)</td><td class="price-avg">₹280+</td><td class="price-range">₹280–950+</td><td>per sqft</td></tr>
+                        <tr><td>Toughened Glass 8mm</td><td class="price-avg">₹166</td><td class="price-range">₹125–176</td><td>per sqft</td></tr>
+                        <tr><td>Double-Glazed Unit (DGU)</td><td class="price-avg">₹300+</td><td class="price-range">₹300–1,000</td><td>per sqft</td></tr>
+                        <tr><td>Jindal Aluminium Section</td><td class="price-avg">₹293</td><td class="price-range">₹250–490</td><td>per kg</td></tr>
+                        <tr><td>Fenesta uPVC Profile</td><td class="price-avg">₹600+</td><td class="price-range">₹600–1,400+</td><td>per sqft</td></tr>
+                        <tr><td>Alstrong ACP Sheet</td><td class="price-avg">₹80+</td><td class="price-range">₹80–300+</td><td>per sqft</td></tr>
+                        <tr><td>Saint-Gobain Gypsum Board</td><td class="price-avg">₹38</td><td class="price-range">₹30–55</td><td>per sqft</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header">
+                <span>💧 Waterproofing Systems</span>
+                <span class="is-code">IS 3067</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Compound Formulation</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Waterproofing Chemical (Dr Fixit/SikaTop)</td><td class="price-avg">₹1,400+</td><td class="price-range">₹1,420–1,500</td><td>per 5 litre</td></tr>
+                        <tr><td>APP Membrane (3mm)</td><td class="price-avg">₹120+</td><td class="price-range">₹120–2,000+</td><td>per sqm</td></tr>
+                        <tr><td>Dr Fixit LW+ Integral</td><td class="price-avg">₹190+</td><td class="price-range">₹190–250</td><td>per litre</td></tr>
+                        <tr><td>Dr Fixit Pidiseal</td><td class="price-avg">₹479</td><td class="price-range">₹360–500</td><td>per kg</td></tr>
+                        <tr><td>Dr Fixit Raincoat</td><td class="price-avg">₹1,000+</td><td class="price-range">₹1,000–2,900</td><td>per litre</td></tr>
+                        <tr><td>Fosroc Nitoproof 120</td><td class="price-avg">₹232</td><td class="price-range">₹162–301</td><td>per litre</td></tr>
+                        <tr><td>Fosroc Brushbond RFH</td><td class="price-avg">₹1,30</td><td class="price-range">₹1,30–3,50</td><td>per kg</td></tr>
+                        <tr><td>Sika Top Seal 107</td><td class="price-avg">₹1,300+</td><td class="price-range">₹1,300–3,500+</td><td>per 25kg</td></tr>
+                        <tr><td>PU Liquid Membrane</td><td class="price-avg">₹364</td><td class="price-range">₹254–474</td><td>per kg</td></tr>
+                        <tr><td>Bituminous Coating</td><td class="price-avg">₹99</td><td class="price-range">₹80–200</td><td>per kg</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>👷 Labour Output Mandays</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Trade Designation</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Skilled Mason</td><td class="price-avg">₹627</td><td class="price-range">₹562–691</td><td>per day</td></tr>
+                        <tr><td>Unskilled Labour</td><td class="price-avg">₹362</td><td class="price-range">₹324–400</td><td>per day</td></tr>
+                        <tr><td>Plumber</td><td class="price-avg">₹675</td><td class="price-range">₹605–745</td><td>per day</td></tr>
+                        <tr><td>Electrician</td><td class="price-avg">₹675</td><td class="price-range">₹605–745</td><td>per day</td></tr>
+                        <tr><td>Painter</td><td class="price-avg">₹572</td><td class="price-range">₹518–626</td><td>per day</td></tr>
+                        <tr><td>Tile Layer</td><td class="price-avg">₹729</td><td class="price-range">₹659–799</td><td>per day</td></tr>
+                        <tr><td>Carpenter</td><td class="price-avg">₹729</td><td class="price-range">₹659–799</td><td>per day</td></tr>
+                        <tr><td>Bar Bender / Steel Fixer</td><td class="price-avg">₹675</td><td class="price-range">₹605–745</td><td>per day</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🚽 Sanitaryware Systems</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Fixture Specifications</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Pedestal Wash Basin</td><td class="price-avg">₹2,496</td><td class="price-range">₹2,500–3,000+</td><td>per piece</td></tr>
+                        <tr><td>Wall-hung Wash Basin</td><td class="price-avg">₹1,783</td><td class="price-range">₹2,070–4,496</td><td>per piece</td></tr>
+                        <tr><td>WC (Floor-mount, S-trap)</td><td class="price-avg">₹5,349</td><td class="price-range">₹3,923–6,775</td><td>per piece</td></tr>
+                        <tr><td>WC (Wall-hung, with cistern)</td><td class="price-avg">₹9,628</td><td class="price-range">₹7,419–12,837+</td><td>per piece</td></tr>
+                        <tr><td>Stainless Steel Kitchen Sink</td><td class="price-avg">₹3,923+</td><td class="price-range">₹,496–5,349+</td><td>per piece</td></tr>
+                        <tr><td>Shower + Diverter Set</td><td class="price-avg">₹5,000+</td><td class="price-range">₹4,496–10,062+</td><td>per set</td></tr>
+                        <tr><td>Hindware Pedestal Basin</td><td class="price-avg">₹3,459+</td><td class="price-range">₹2,282–8,636+</td><td>per piece</td></tr>
+                        <tr><td>Cera Pedestal Basin</td><td class="price-avg">₹3,210+</td><td class="price-range">₹2,140–9,279+</td><td>per piece</td></tr>
+                        <tr><td>Jaquar Recessed Wash Basin</td><td class="price-avg">₹4,993</td><td class="price-range">₹3,923–9,062+</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🔌 Switches & Sockets Modules</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Modular Selection</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Modular Switch 1-way 6A</td><td class="price-avg">₹86+</td><td class="price-range">₹80–200</td><td>per piece</td></tr>
+                        <tr><td>Modular Switch 2-way 16A</td><td class="price-avg">₹168</td><td class="price-range">₹90–400</td><td>per piece</td></tr>
+                        <tr><td>Modular Socket 6/16A</td><td class="price-avg">₹153</td><td class="price-range">₹100–389</td><td>per piece</td></tr>
+                        <tr><td>Modular Switch Plate (6-mod)</td><td class="price-avg">₹260</td><td class="price-range">₹190–800</td><td>per piece</td></tr>
+                        <tr><td>Anchor Roma 1-way Switch</td><td class="price-avg">₹90</td><td class="price-range">₹78–120</td><td>per piece</td></tr>
+                        <tr><td>Legrand Myrius Switch 6A</td><td class="price-avg">₹164</td><td class="price-range">₹200–400</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="rate-category-box">
+            <div class="rate-category-header"><span>🚪 Door Units & Structural Shutters</span></div>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Frame Type</th><th>Avg Price</th><th>Dealer Range</th><th>Unit</th></tr></thead>
+                    <tbody>
+                        <tr><td>Flush Door 7×3 ft (Internal)</td><td class="price-avg">₹3,000+</td><td class="price-range">₹2,997–6,209</td><td>per piece</td></tr>
+                        <tr><td>WPC Door 7×3 ft (Bathroom)</td><td class="price-avg">₹7,140</td><td class="price-range">₹5,569–9,710</td><td>per piece</td></tr>
+                        <tr><td>Teak Panel Door 7×3 ft</td><td class="price-avg">₹12,124+</td><td class="price-range">₹8,558–90,000+</td><td>per piece</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="comparisons">
+    <h2 class="section-title">Lucknow vs Other Indian Cities</h2>
+    
+    <div class="card">
+        <h3 style="margin-top:0;">Cost Benchmarks (Standard Quality, 1,000 sqft Total Build)</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top:-5px; margin-bottom: 24px;">
+            A comparative outlook showing how regional dynamics, logistics, and labor pools impact costs across regional peer cities and national economic centers.
+        </p>
+        
+        <h4 style="color: var(--text-dark); margin-bottom: 12px; font-size:1.1rem;">Regional UP Peer Framework</h4>
+        <div style="overflow-x:auto; margin-bottom: 32px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>City Base</th>
+                        <th>Rate Per Sqft</th>
+                        <th>Estimated 1,000 sqft Total</th>
+                        <th>Variance vs Lucknow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row"><td>Lucknow (Baseline Hub)</td><td>₹2,800</td><td>₹20.48 Lakhs</td><td>—</td></tr>
+                    <tr><td>Noida / Greater Noida</td><td>₹3,000</td><td>₹23.00 Lakhs</td><td>+12%</td></tr>
+                    <tr><td>Agra</td><td>₹3,995</td><td>₹20.00 Lakhs</td><td>-3%</td></tr>
+                    <tr><td>Varanasi</td><td>₹2,943</td><td>₹19.43 Lakhs</td><td>-5%</td></tr>
+                    <tr><td>Kanpur</td><td>₹2,990</td><td>₹19.43 Lakhs</td><td>-5%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: var(--text-dark); margin-bottom: 12px; font-size:1.1rem;">National Metro Network Matrix</h4>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metro Destination</th>
+                        <th>Rate Per Sqft</th>
+                        <th>Estimated 1,000 sqft Total</th>
+                        <th>Variance vs Lucknow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row"><td>Lucknow (Baseline Hub)</td><td>₹3,900+</td><td>₹20.48 Lakhs</td><td>—</td></tr>
+                    <tr><td>Delhi NCR</td><td>₹4,800</td><td>₹23.00 Lakhs</td><td>+12%</td></tr>
+                    <tr><td>Hyderabad</td><td>₹3,205</td><td>₹22.05 Lakhs</td><td>+8%</td></tr>
+                    <tr><td>Kolkata</td><td>₹4,205</td><td>₹22.05 Lakhs</td><td>+8%</td></tr>
+                    <tr><td>Chennai</td><td>₹3,363</td><td>₹23.63 Lakhs</td><td>+15%</td></tr>
+                    <tr><td>Bangalore</td><td>₹6,520</td><td>₹25.20 Lakhs</td><td>+23%</td></tr>
+                    <tr><td>Pune</td><td>₹3,573</td><td>₹25.73 Lakhs</td><td>+26%</td></tr>
+                    <tr><td>Mumbai</td><td>₹5,150</td><td>₹31.50 Lakhs</td><td>+54%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="material-table-container">
+    <h3>Current Core Material Rates in Lucknow (Indicative Market Midpoint)</h3>
+    <div style="overflow-x:auto;">
+        <table class="material-rates-table">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Unit</th>
+                    <th>Average Price Range (₹)</th>
+                    <th>Key Quality / Brand Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OPC 53 Grade Cement</strong></td>
+                    <td>Per 50 kg bag</td>
+                    <td>₹412 – ₹455</td>
+                    <td>Premium (e.g., UltraTech, ACC)</td>
+                </tr>
+                <tr>
+                    <td><strong>PPC Cement</strong></td>
+                    <td>Per 50 kg bag</td>
+                    <td>₹369 – ₹412</td>
+                    <td>Standard (e.g., Ambuja, Birla)</td>
+                </tr>
+                <tr>
+                    <td><strong>TMT Steel (Fe 500D/550D)</strong></td>
+                    <td>Per kg</td>
+                    <td>₹56 – ₹73</td>
+                    <td>Primary mills (Tata/JSW/SAIL) higher end; local mills lower end</td>
+                </tr>
+                <tr>
+                    <td><strong>Morang / River Sand</strong></td>
+                    <td>Per brass (100 cft)</td>
+                    <td>₹8,400 – ₹12,000</td>
+                    <td>Premium coarse grade; strict state mining caps apply</td>
+                </tr>
+                <tr>
+                    <td><strong>M-Sand (Manufactured Sand)</strong></td>
+                    <td>Per brass (100 cft)</td>
+                    <td>₹6,000 – ₹8,400</td>
+                    <td>Viable alternative for concrete/plastering</td>
+                </tr>
+                <tr>
+                    <td><strong>Coarse Aggregate (20mm)</strong></td>
+                    <td>Per brass (100 cft)</td>
+                    <td>₹5,400 – ₹7,800</td>
+                    <td>Sourced via long stone haul from Sonbhadra/Bundelkhand</td>
+                </tr>
+                <tr>
+                    <td><strong>Red Clay Bricks</strong></td>
+                    <td>Per piece</td>
+                    <td>₹6 – ₹9</td>
+                    <td>Standard wire-cut from regional kilns (e.g., Mohanlalganj)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<section id="services">
+    <h2 class="section-title">Core Competencies & Services</h2>
+    <div class="products">
+        <div class="product-card">
+            <div>
+                <h3>House Construction</h3>
+                <p>Premium architectural planning and structural RCC execution from excavation right to final finish keys.</p>
+            </div>
+            <div>
+                <div class="price-tag">From ₹1,800 / sqft</div>
+                <a href="#contact" class="btn" style="width: 100%;">Enquire Rate</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <h3>Interior Architecture</h3>
+                <p>Bespoke interior installations, modular woodwork configurations, custom fall ceilings, and high-end lighting layouts.</p>
+            </div>
+            <div>
+                <div class="price-tag">From ₹1,200 / sqft</div>
+                <a href="#contact" class="btn" style="width: 100%;">Enquire Rate</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <h3>Renovation Works</h3>
+                <p>Total retrofitting structural repairs, deep wet-area leak restorations, tile replacements, and structural upgrades.</p>
+            </div>
+            <div>
+                <div class="price-tag">From ₹450 / sqft</div>
+                <a href="#contact" class="btn" style="width: 100%;">Enquire Rate</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<blockquote class="buyer-takeaway-note">
+    <div class="note-header">
+        <strong>💡 Buyer Takeaway</strong>
+    </div>
+    <p>
+        Cement is moderately priced via the Satna corridor, but aggregate carries a real haulage premium — large UP projects commonly tie up Bundelkhand quarry rate contracts and rail-rake allocations a season ahead. 
+    </p>
+    <aside class="note-disclaimer">
+        <em><strong>Note:</strong> Use the live material table above as an indicative midpoint, then confirm with a Lucknow, Uttar Pradesh dealer before raising a purchase order.</em>
+    </aside>
+</blockquote>
+
+<section id="achievements">
+    <h2 class="section-title">Key Benchmarks & Achievements</h2>
+    <div class="card">
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="position:relative; padding-left: 28px; margin-bottom: 16px;">🥇 <strong style="color: var(--text-dark);">50+ Completed Projects:</strong> Custom turnkey homes, light commercial structures, and multi-story fit-outs across key Lucknow areas.</li>
+            <li style="position:relative; padding-left: 28px; margin-bottom: 16px;">😊 <strong style="color: var(--text-dark);">100+ Premium Clients:</strong> Transparent structural updates and rigid timeline compliance ensure stellar references.</li>
+            <li style="position:relative; padding-left: 28px; margin-bottom: 16px;">🏢 <strong style="color: var(--text-dark);">Dual Core Expertise:</strong> Proficient management capabilities spanning complex heavy industrial columns down to high-finish architectural detail.</li>
+            <li style="position:relative; padding-left: 28px; margin-bottom: 0;">⏱️ <strong style="color: var(--text-dark);">Rigid Material Logistics Management:</strong> Scheduled delivery intervals minimize on-site waste and secure precise targets.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2 class="section-title">Project Exhibition Gallery</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Foundation Layout">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Living Spaces Fitout">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Completed Exterior Design">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8c9c1f1c72?auto=format&fit=crop&w=400&q=80" alt="Engineering Oversight">
+    </div>
+
+    <div style="margin-top: 48px;" class="media-container">
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0" allowfullscreen style="display: block; border: none;"></iframe>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Secure Project Consultation</h2>
+    <div class="card" style="text-align: center; max-width: 650px; margin: 0 auto;">
+        <p style="font-size: 1.1rem; margin-bottom: 32px; color: var(--text-dark); font-weight: 500;">Get in touch directly with our site team to discuss project blueprints, material estimations, and available slots.</p>
+        
+        <div style="margin-bottom: 32px; text-align: left; max-width: 440px; margin-left: auto; margin-right: auto; background: #f8fafc; padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <p style="margin: 8px 0;"><strong>📞 Direct Lines:</strong> +91 99840 00999, +91 70840 00999</p>
+            <p style="margin: 8px 0;"><strong>📧 Corporate Mail:</strong> ajeetsingh1984gc@gmail.com</p>
+            <p style="margin: 8px 0;"><strong>🅾 Instagram Handle:</strong> @ajeet.singh1984</p>
+        </div>
+
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
+            <a href="tel:+919984000999" class="btn">Initiate Secure Call</a>
+            <a href="https://wa.me/919984000999" class="btn btn-secondary">Connect on WhatsApp</a>
+        </div>
+
+        <div class="media-container">
+            <iframe src="https://maps.google.com/maps?q=Lucknow&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0; display: block;"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Ajeet Construction | Professional Structural Engineering & General Contracting Frameworks | All Rights Reserved</p>
+</footer>
+
+<script>
+    /* Slider interactive calculator script */
+    const areaSlider = document.getElementById('area-slider');
+    const areaVal = document.getElementById('area-val');
+    const calculatedTotal = document.getElementById('calculated-total');
+    const calculatedDesc = document.getElementById('calculated-desc');
+
+    let currentConfig = '2BHK';
+    let currentRate = 2048; 
+    let currentQualityName = 'Standard';
+
+    setupSliderButtonGroup('config-group', (val) => { currentConfig = val; runSliderCalculation(); });
+    setupSliderButtonGroup('quality-group', (val, text) => { currentRate = parseInt(val); currentQualityName = text; runSliderCalculation(); });
+
+    areaSlider.addEventListener('input', (e) => {
+        areaVal.innerText = parseInt(e.target.value).toLocaleString('en-IN');
+        runSliderCalculation();
+    });
+
+    function setupSliderButtonGroup(groupId, callback) {
+        const container = document.getElementById(groupId);
+        container.querySelectorAll('.btn-choice').forEach(btn => {
+            btn.addEventListener('click', () => {
+                container.querySelector('.btn-choice.active').classList.remove('active');
+                btn.classList.add('active');
+                callback(btn.getAttribute('data-val'), btn.innerText);
+            });
+        });
+    }
+
+    function runSliderCalculation() {
+        const area = parseInt(areaSlider.value);
+        const baselineCost = area * currentRate;
+        const lowBound = Math.round((baselineCost * 0.95) / 100000);
+        const highBound = Math.round((baselineCost * 1.05) / 100000);
+        
+        calculatedTotal.innerText = `₹${lowBound}–${highBound} L`;
+        calculatedDesc.innerText = `₹${currentRate.toLocaleString('en-IN')}/sqft · ${currentQualityName} · ${currentConfig}`;
+    }
+
+    /* Fixed Numeric Volume Calculator for Raw Components */
+    function calculateRawMaterials() {
+        const areaInput = document.getElementById('custom-area-input').value;
+        const area = parseFloat(areaInput);
+        const resultsBox = document.getElementById('raw-results-box');
+        
+        if (isNaN(area) || area <= 0) {
+            alert("Please input valid structural measurements to begin calculations.");
+            return;
+        }
+
+        const cementMultiplier = 0.4;  
+        const sandMultiplier = 1.2;    
+        const bricksMultiplier = 25;   
+        const steelMultiplier = 4;     
+
+        document.getElementById('cement-val').innerText = Math.round(area * cementMultiplier).toLocaleString('en-IN') + ' bags';
+        document.getElementById('sand-val').innerText = Math.round(area * sandMultiplier).toLocaleString('en-IN') + ' cft';
+        document.getElementById('bricks-val').innerText = Math.round(area * bricksMultiplier).toLocaleString('en-IN') + ' pcs';
+        document.getElementById('steel-val').innerText = Math.round(area * steelMultiplier).toLocaleString('en-IN') + ' kg';
+
+        resultsBox.style.display = 'block';
+    }
+
+    runSliderCalculation();
+</script>
+
+</body>
+</html>
